@@ -1,24 +1,21 @@
-//
-//  ContentView.swift
-//  Squidget
-//
-//  Created by Alexander Saw on 04/03/2026.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            SandGardenView()
+                .tabItem {
+                    Label("Sand", systemImage: "circle.grid.3x3.fill")
+                }
+            MagneticSlimeView()
+                .tabItem {
+                    Label("Slime", systemImage: "drop.fill")
+                }
+            CardFlickView()
+                .tabItem {
+                    Label("Cards", systemImage: "rectangle.stack.fill")
+                }
         }
-        .padding()
+        .tint(.white)
     }
-}
-
-#Preview {
-    ContentView()
 }
